@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <header>
+        <div style="background-color: #003D29; height: 5vh;">
+             <ul class="nav justify-content-between">
+            <li class="nav-item mt-1" style="color: white; margin-left: 145px;">
+                <i class="bi bi-telephone">+02254414211</i>
+            </li>
+            <li class="nav-item mt-1" style="color: white;">
+                <p>Obtenga un 50% de descuento || Compre ahora</p>
+            </li>
+
+            <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle " style="text-decoration: none; color: white; margin-right: 130px; ;"
+                    href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Español
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Ingles</a></li>
+
+                </ul>
+
+            </li>
+        </ul>
+        </div>
+       
+        <!--  -->
+        <nav class="navbar navbar-expand-lg " style="height: 100px;">
+            <div class="container px-4 px-lg-5 header-section ">
+                <a class="navbar-brand" href="#!">E-Commerce UTN</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+    
+                        <!-- CATEGORIAS -->
+                        <div class="categorias">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link active dropdown-toggle" aria-current="page" href="#"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    Categorías
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Auriculares</a></li>
+                                    <li><a class="dropdown-item" href="#">Altavoces</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Otros dispositivos</a></li>
+                                </ul>
+                            </li>
+                        </div>
+    
+                        <!-- OFERTAS -->
+                        <div class="ofertas">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Ofertas</a>
+                            </li>
+                        </div>
+    
+                        <!-- NUEVO -->
+                        <div class="nuevo">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Lo Nuevo!</a>
+                            </li>
+                        </div>
+    
+                        <!-- ENVIOS -->
+                        <div class="envios">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Envíos</a>
+                            </li>
+                        </div>
+                    </ul>
+    
+    
+    
+                    <form class="d-flex">
+    
+    
+                        <!-- INPUT BÚSQUEDA -->
+                        <div class="buscar">
+                            <div class="input-group position-relative" >
+                                <input type="text" class="form-control" placeholder="Buscar" aria-label="Buscar"
+                                    aria-describedby="basic-addon2">
+    
+                                <!-- <button type="button" style="border: none; background-color:white;" class="nombredelaclase">
+                                        <span class="bi bi-search"  aria-hidden="true"></span> 
+                                      </button> -->
+                                <span class="input-group-text   " id="basic-addon2" style="background-color: white; cursor: pointer; border: none; position: absolute; right: 1px; top: 5px;">
+                                        <i class="fas fa-search "></i>
+                                    </span>
+                            </div>
+                        </div>
+    
+    
+                        <!-- ÍCONO Y TEXTO CUENTA -->
+                        <button class="btn btn-outline-none" type="submit">
+                            <i class="fas fa-user" style="background-color: white;"></i>
+                            Cuenta
+                        </button>
+    
+    
+                        <!-- ÍCONO Y TEXTO CARRITO -->
+                        <div class="categorias d-flex justify-content-center">
+                            <li class="nav-item dropdown" style="list-style: none;">
+                                <div>
+                                    <img onclick="showCart(this)" class="cart" src="./carrito1.png" alt="">
+                                    <p class="count-product">0</p>
+                                </div>
+                                <div class="cart-products" id="products-id">
+                                    <p class="close-btn" onclick="closeBtn()">X</p>
+                                    <h3>Mi carrito</h3>
+                                    <div class="card-items">
+                                       
+                                    </div>
+                                    <h2>Total: $<strong class="price-total">0</strong></h2>
+                                </div>
+                               
+                            </li>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </nav>
+        <!--  -->
+        <nav class="navbar navbar-expand-lg mt-4">
+            <div class="container-fluid px-4 px-lg-5" style="margin-left: 3.125rem;">
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-5 ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Auriculares
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Modelo</a></li>
+                                <li><a class="dropdown-item" href="#">Color</a></li>
+        
+                                <li><a class="dropdown-item" href="#">Funciones</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Precio
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Descripcion
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Color
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Material
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ofertas
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle m-1" style="background-color: #ecf0f4; border-radius: 35px;"
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Filtros
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+        
+                </div>
+            </div>
+        
+            <div style="margin-right: 9.688rem;">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+                    <ul>
+        
+                        <li class="nav-item dropdown" style="list-style: none;">
+                            <a class="nav-link dropdown-toggle m-1 text-center pt-1"
+                                style="background-color: #ecf0f4; border-radius: 35px; height: 35px; width: 100px; "
+                                href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Ordenar
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Modelo</a></li>
+                                <li><a class="dropdown-item" href="#">Precio</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        
+        </nav>
+        
+
+       
+
+
+       
+    </header>
+   
+
+     <section class="container">
+        <div class="products">
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/71fBJd2SVtL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>20</span>$</p>
+                </div>
+                <p class="title">Tempest Cataclysm Combo 3 En 1 Gaming Teclado</p>
+                <a href="" data-id="1" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61SU5DYIlbL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>35</span>$</p>
+                </div>
+                <p class="title"> Newskill Suiko Ivory Teclado Mecánico Gaming Full RGB</p>
+                <a href="" class="btn-add-cart btn-secondary" data-id="2">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61vquqCy-+L._AC_SY300_SX300_.jpg" alt="">
+                    <p><span>15.50</span>$</p>
+                </div>
+                <p class="title"> Aukey KM-G16 Teclado Mecánico Gaming Retroiluminado</p>
+                <a href="" data-id="3" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61Iw4Vrt-BL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>20.20</span>$</p>
+                </div>
+                <p class="title"> Razer Huntsman Elite Teclado Mecánico Gaming RGB</p>
+                <a href="" data-id="4" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/71fBJd2SVtL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>19</span>$</p>
+                </div>
+                <p class="title"> Trust GXT 856 Torac Teclado Metálico Gaming RGB</p>
+                <a href="" data-id="5" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61Iw4Vrt-BL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>45</span>$</p>
+                </div>
+                <p class="title"> MSI Vigor GK30 Teclado Gaming RGB</p>
+                <a href="" data-id="6" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61Iw4Vrt-BL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>23.99</span>$</p>
+                </div>
+                <p class="title"> Genesis Thor 300 RGB Teclado Mecánico Gaming RGB Switch Rojo</p>
+                <a href="" data-id="7" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61Iw4Vrt-BL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>50</span>$</p>
+                </div>
+                <p class="title"> Mars Gaming MKXTKL Teclado Mecánico Gaming RGB</p>
+                <a href="" data-id="8" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/61Iw4Vrt-BL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>16</span>$</p>
+                </div>
+                <p class="title"> Trust GXT 881 Odyss Teclado Gaming Semi-Mecánico RGB</p>
+                <a href="" data-id="9" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/71fBJd2SVtL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>17.50</span>$</p>
+                </div>
+                <p class="title"> Krom Krusher Teclado Gaming Híbrido RGB + Ratón</p>
+                <a href="" data-id="10" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/71fBJd2SVtL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>45</span>$</p>
+                </div>
+                <p class="title"> Corsair K55 RGB PRO XT Teclado Gaming Retroiluminado Negro</p>
+                <a href="" data-id="11" class="btn-add-cart">add to cart</a>
+            </div>
+            <div class="carts">
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/71fBJd2SVtL.__AC_SX300_SY300_QL70_ML2_.jpg" alt="">
+                    <p><span>45</span>$</p>
+                </div>
+                <p class="title"> Corsair K55 RGB PRO XT Teclado Gaming Retroiluminado Negro</p>
+                <a href="" data-id="11" class="btn-add-cart">add to cart</a>
+            </div>
+        </div>
+    </section> 
+
+   
+
+    <script>
+        function showCart(x){
+            document.getElementById("products-id").style.display = "block";
+        }
+        function closeBtn(){
+             document.getElementById("products-id").style.display = "none";
+        }
+
+    </script>
+    <script src="./carrito.js" ></script>
+</body>
+</html>
